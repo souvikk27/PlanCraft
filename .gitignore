@@ -1,7 +1,18 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs
-/PlanCraft.API/obj
-/src/API/PlanCraft.API/obj
+.vs/
+.idea/
+.vscode/
+/src/app/Plancraft.App.Infrastructure/obj
+/src/app/Plancraft.App.Shared/obj
+/src/app/Plancraft.Host/bin/Debug/net8.0
+/src/app/Plancraft.Host/obj
+/src/domain/Plancraft.Domain/bin/Debug/net8.0
+/src/domain/Plancraft.Domain/obj
+/src/domain/Plancraft.Domain.Enum/bin/Debug/net8.0
+/src/domain/Plancraft.Domain.Enum/obj
+/src/domain/Plancraft.Domain.Migrations/bin/Debug/net8.0
+/src/domain/Plancraft.Domain.Migrations/obj
+/src/domain/Plancraft.Domain.Repository/bin/Debug/net8.0
+/src/domain/Plancraft.Domain.Repository/obj
+/src/domain/Plancraft.Domain.Repository.Injection/obj
+/src/domain/Plancraft.Domain.Specification/obj
+/src/domain/Plancraft.Domain.Tests.Unit/obj

@@ -1,6 +1,0 @@
-@PlanCraft.API_HostAddress = http://localhost:5128
-
-GET {{PlanCraft.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

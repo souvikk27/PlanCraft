@@ -1,0 +1,6 @@
+@Plancraft.Host_HostAddress = http://localhost:5389
+
+GET {{Plancraft.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
