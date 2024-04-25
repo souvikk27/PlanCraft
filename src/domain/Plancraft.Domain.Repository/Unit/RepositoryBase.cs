@@ -15,8 +15,8 @@ public abstract class RepositoryBase<TEntity, TContext> where TEntity : class wh
         Context = options.Context;
     }
     
-    protected virtual Expression<Func<TContext, DbSet<TEntity>>> DataSet() => null;
-    protected virtual Expression<Func<TEntity, object>> Key() => null;
+    public virtual Expression<Func<TContext, DbSet<TEntity>>> DataSet() => null;
+    public virtual Expression<Func<TEntity, object>> Key() => null;
     
     public virtual TEntity GetById(object id)
         {

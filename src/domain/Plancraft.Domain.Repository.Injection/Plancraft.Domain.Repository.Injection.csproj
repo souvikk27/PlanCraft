@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Plancraft.Domain.Repository\Plancraft.Domain.Repository.csproj" />
+    </ItemGroup>
+
 </Project>
