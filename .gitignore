@@ -16,3 +16,8 @@
 /src/domain/Plancraft.Domain.Repository.Injection/obj
 /src/domain/Plancraft.Domain.Specification/obj
 /src/domain/Plancraft.Domain.Tests.Unit/obj
+/src/app/Plancraft.App.Infrastructure/bin/Debug/net8.0
+/src/app/Plancraft.App.Shared/bin/Debug/net8.0
+/src/domain/Plancraft.Domain.Repository.Injection/bin/Debug/net8.0
+/src/domain/Plancraft.Domain.Specification/bin/Debug/net8.0
+/src/domain/Plancraft.Domain.Tests.Unit/bin/Debug/net8.0

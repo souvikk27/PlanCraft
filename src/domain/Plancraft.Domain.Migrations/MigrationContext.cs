@@ -278,6 +278,26 @@ public partial class MigrationContext : PlancraftContext
                         j.IndexerProperty<Guid>("UserId").HasColumnName("UserID");
                         j.IndexerProperty<Guid>("GroupId").HasColumnName("GroupID");
                     });
+
+            entity.HasMany(p => p.Projects).WithMany(u => u.Users)
+                .UsingEntity<Dictionary<string, object>>(
+                    "UserProjects",
+                    r => r.HasOne<Project>().WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__UserProje__Proje__5CD6CB2B"),
+                    l => l.HasOne<ApplicationUser>().WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__UserProje__UserI__5EDF0CAE"),
+                    j =>
+                    {
+                        j.HasKey("UserId", "ProjectId").HasName("PK__UserProj__A6C1639C94EA34FE");
+                        j.ToTable("UserProjects");
+                        j.IndexerProperty<Guid>("UserId").HasColumnName("UserID");
+                        j.IndexerProperty<Guid>("ProjectId").HasColumnName("ProjectID");
+                    });
+
         });
         
         modelBuilder.Entity<IdentityRole>(entity =>

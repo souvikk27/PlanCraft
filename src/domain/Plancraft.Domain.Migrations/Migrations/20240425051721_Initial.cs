@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Plancraft.Domain.Migrations.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialModel : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -311,6 +311,28 @@ namespace Plancraft.Domain.Migrations.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserProjects",
+                columns: table => new
+                {
+                    UserID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProjectID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__UserProj__A6C1639C94EA34FE", x => new { x.UserID, x.ProjectID });
+                    table.ForeignKey(
+                        name: "FK__UserProje__Proje__5CD6CB2B",
+                        column: x => x.ProjectID,
+                        principalTable: "Projects",
+                        principalColumn: "ProjectID");
+                    table.ForeignKey(
+                        name: "FK__UserProje__UserI__5EDF0CAE",
+                        column: x => x.UserID,
+                        principalTable: "Users",
+                        principalColumn: "UserID");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserRoles",
                 columns: table => new
                 {
@@ -521,6 +543,11 @@ namespace Plancraft.Domain.Migrations.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_UserProjects_ProjectID",
+                table: "UserProjects",
+                column: "ProjectID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_UserRoles_RoleId",
                 table: "UserRoles",
                 column: "RoleId");
@@ -573,6 +600,9 @@ namespace Plancraft.Domain.Migrations.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserLogins");
+
+            migrationBuilder.DropTable(
+                name: "UserProjects");
 
             migrationBuilder.DropTable(
                 name: "UserRoles");

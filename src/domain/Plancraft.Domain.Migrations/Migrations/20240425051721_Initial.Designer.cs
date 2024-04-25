@@ -12,8 +12,8 @@ using Plancraft.Domain.Migrations;
 namespace Plancraft.Domain.Migrations.Migrations
 {
     [DbContext(typeof(MigrationContext))]
-    [Migration("20240424161440_InitialModel")]
-    partial class InitialModel
+    [Migration("20240425051721_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1015,6 +1015,24 @@ namespace Plancraft.Domain.Migrations.Migrations
                     b.ToTable("UserGroupMapping", (string)null);
                 });
 
+            modelBuilder.Entity("UserProjects", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("UserID");
+
+                    b.Property<Guid>("ProjectId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ProjectID");
+
+                    b.HasKey("UserId", "ProjectId")
+                        .HasName("PK__UserProj__A6C1639C94EA34FE");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("UserProjects", (string)null);
+                });
+
             modelBuilder.Entity("ContractDocument", b =>
                 {
                     b.HasOne("Plancraft.Domain.Models.Contract", null)
@@ -1186,6 +1204,21 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasForeignKey("UserId")
                         .IsRequired()
                         .HasConstraintName("FK__UserGroup__UserI__66603565");
+                });
+
+            modelBuilder.Entity("UserProjects", b =>
+                {
+                    b.HasOne("Plancraft.Domain.Models.Project", null)
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .IsRequired()
+                        .HasConstraintName("FK__UserProje__Proje__5CD6CB2B");
+
+                    b.HasOne("Plancraft.Domain.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .IsRequired()
+                        .HasConstraintName("FK__UserProje__UserI__5EDF0CAE");
                 });
 
             modelBuilder.Entity("Plancraft.Domain.Models.ApplicationUser", b =>

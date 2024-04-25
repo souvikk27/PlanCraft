@@ -26,4 +26,6 @@ public partial class Project
     public virtual ICollection<Document> Documents { get; set; } = new List<Document>();
 
     public virtual ICollection<Funder> Funders { get; set; } = new List<Funder>();
+
+    public virtual ICollection<ApplicationUser> Users { get; set; } = new List<ApplicationUser>();
 }
