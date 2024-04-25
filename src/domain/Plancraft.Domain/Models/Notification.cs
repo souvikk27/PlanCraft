@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Plancraft.Domain.Models.Generic;
 
 namespace Plancraft.Domain.Models;
 
-public class Notification
+public class Notification : GenericConfiguration
 {
     [Key]
     public Guid NotificationId { get; set; }

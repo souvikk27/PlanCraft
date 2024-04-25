@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Plancraft.Domain.Models.Generic;
 
 namespace Plancraft.Domain.Models;
 
-public partial class ContractItem
+public class ContractItem : GenericConfiguration
 {
     public Guid ItemId { get; set; }
 

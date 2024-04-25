@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Plancraft.Domain.Models.Generic;
 
 namespace Plancraft.Domain.Models;
 
-public partial class Setting
+public class Setting : GenericConfiguration
 {
     [Key]
     public Guid SettingId { get; set; }

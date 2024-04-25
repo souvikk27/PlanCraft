@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Plancraft.Domain.Models.Generic;
 
 namespace Plancraft.Domain.Models;
 
-public partial class PaymentModality
+public class PaymentModality : GenericConfiguration
 {
     [Key]
     public Guid ModalityId { get; set; }

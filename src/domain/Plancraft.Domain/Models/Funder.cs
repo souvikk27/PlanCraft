@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Plancraft.Domain.Models.Generic;
 
 namespace Plancraft.Domain.Models;
 
-public partial class Funder
+public class Funder : GenericConfiguration
 {
     [Key]
     public Guid FunderId { get; set; }

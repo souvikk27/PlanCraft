@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Plancraft.Domain.Models.Generic;
 
 namespace Plancraft.Domain.Models;
 
-public class Document
+public class Document : GenericConfiguration
 {
     [Key]
     public Guid DocumentId { get; set; }

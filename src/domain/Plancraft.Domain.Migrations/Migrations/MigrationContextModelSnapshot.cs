@@ -275,11 +275,17 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnName("ContractID")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateOnly?>("EndDate")
                         .HasColumnType("date");
 
                     b.Property<string>("GeneralInformation")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(255)
@@ -289,12 +295,18 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ProjectID");
 
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateOnly?>("StartDate")
                         .HasColumnType("date");
 
                     b.Property<string>("Type")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<decimal?>("Value")
                         .HasColumnType("decimal(18, 2)");
@@ -319,12 +331,18 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ContractID");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Currency")
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(255)
@@ -336,8 +354,14 @@ namespace Plancraft.Domain.Migrations.Migrations
                     b.Property<decimal?>("QuantityOrBudget")
                         .HasColumnType("decimal(18, 2)");
 
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal?>("UnitPrice")
                         .HasColumnType("decimal(18, 2)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ItemId")
                         .HasName("PK__Contract__727E83EB489862DB");
@@ -355,16 +379,28 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnName("DocumentID")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Type")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("UploadDate")
                         .HasColumnType("datetime");
@@ -393,6 +429,9 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("ContractItemID");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Currency")
                         .HasMaxLength(3)
                         .HasColumnType("nvarchar(3)");
@@ -404,9 +443,18 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("FunderID");
 
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
                     b.Property<string>("PaymentType")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("TransactionId")
                         .HasName("PK__Financia__55433A4B72677581");
@@ -429,13 +477,25 @@ namespace Plancraft.Domain.Migrations.Migrations
                     b.Property<string>("ContactInformation")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Type")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("FunderId")
                         .HasName("PK__Funders__B752D7C1D2EF142D");
@@ -451,10 +511,22 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnName("GroupID")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("GroupId")
                         .HasName("PK__Groups__149AF30ACDCA3E6E");
@@ -470,8 +542,17 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnName("NotificationID")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Message")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("ScheduledDate")
                         .HasColumnType("datetime");
@@ -482,6 +563,9 @@ namespace Plancraft.Domain.Migrations.Migrations
                     b.Property<string>("Type")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)")
@@ -503,8 +587,14 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnName("ModalityID")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(255)
@@ -512,6 +602,12 @@ namespace Plancraft.Domain.Migrations.Migrations
 
                     b.Property<string>("PaymentTerms")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ModalityId")
                         .HasName("PK__PaymentM__C179441B11C5A650");
@@ -530,15 +626,24 @@ namespace Plancraft.Domain.Migrations.Migrations
                     b.Property<decimal?>("Budget")
                         .HasColumnType("decimal(18, 2)");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateOnly?>("EndDate")
                         .HasColumnType("date");
 
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
+
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateOnly?>("StartDate")
                         .HasColumnType("date");
@@ -546,6 +651,9 @@ namespace Plancraft.Domain.Migrations.Migrations
                     b.Property<string>("Status")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ProjectId")
                         .HasName("PK__Projects__761ABED0F44558C0");
@@ -561,10 +669,22 @@ namespace Plancraft.Domain.Migrations.Migrations
                         .HasColumnName("SettingID")
                         .HasDefaultValueSql("(newid())");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("RemovedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
