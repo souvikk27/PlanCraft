@@ -22,3 +22,4 @@
 /src/domain/Plancraft.Domain.Specification/bin/Debug/net8.0
 /src/domain/Plancraft.Domain.Tests.Unit/bin/Debug/net8.0
 /src/domain/Plancraft.Domain.Persistance/obj
+/src/app/Plancraft.App.Presentation/obj

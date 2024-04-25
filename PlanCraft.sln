@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plancraft.App.Shared", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plancraft.Domain.Persistance", "src\domain\Plancraft.Domain.Persistance\Plancraft.Domain.Persistance.csproj", "{A76CDF3B-7B2B-4C38-8A9F-B4E7F3F60245}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plancraft.App.Presentation", "src\app\Plancraft.App.Presentation\Plancraft.App.Presentation.csproj", "{7B7E4C43-3352-449D-83DD-4A59146E4104}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,7 @@ Global
 		{AB15097E-9AC0-4CAD-AFE8-DF2EA7EB13BA} = {307A9EDF-86D7-4C15-A791-0624E2815B09}
 		{8CC92FDC-0BB4-40B7-BC30-C335654F82F5} = {307A9EDF-86D7-4C15-A791-0624E2815B09}
 		{A76CDF3B-7B2B-4C38-8A9F-B4E7F3F60245} = {9196BC64-B1E0-4B56-9FCB-6279D14E3884}
+		{7B7E4C43-3352-449D-83DD-4A59146E4104} = {307A9EDF-86D7-4C15-A791-0624E2815B09}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4E9BDA4E-622C-4354-8C2F-374B7931B681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -102,5 +105,9 @@ Global
 		{A76CDF3B-7B2B-4C38-8A9F-B4E7F3F60245}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A76CDF3B-7B2B-4C38-8A9F-B4E7F3F60245}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A76CDF3B-7B2B-4C38-8A9F-B4E7F3F60245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7E4C43-3352-449D-83DD-4A59146E4104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7E4C43-3352-449D-83DD-4A59146E4104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7E4C43-3352-449D-83DD-4A59146E4104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7E4C43-3352-449D-83DD-4A59146E4104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
